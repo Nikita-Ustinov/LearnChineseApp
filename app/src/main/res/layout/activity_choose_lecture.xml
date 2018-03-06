@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
-        tools:text="Сhoose lectures which you want to study: " />
+        tools:text="@string/title_choose_lecture" />
 
 
     <ScrollView
@@ -253,7 +253,7 @@
         android:layout_marginBottom="44dp"
         android:layout_marginEnd="8dp"
         android:onClick="btnBeginClick"
-        android:text="Begin"
+        android:text="@string/btn_begin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints" />
@@ -265,7 +265,7 @@
         android:layout_marginBottom="10dp"
         android:layout_marginEnd="8dp"
         android:onClick="btnBackClick"
-        android:text="Back"
+        android:text="@string/btn_back"
         app:layout_constraintBottom_toTopOf="@+id/btnBeginStudy"
         app:layout_constraintEnd_toEndOf="parent" />
 

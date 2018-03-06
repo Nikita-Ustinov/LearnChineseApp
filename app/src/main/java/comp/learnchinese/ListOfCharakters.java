@@ -27,6 +27,7 @@ public class ListOfCharakters extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
+        ShowCharacter.deleteMode = false;
         charactersIdList = intent.getIntArrayExtra("characters id to show");
         if(charactersIdList != null) {
             for(int j=0; j<charactersIdList.length; j++) {
@@ -49,6 +50,7 @@ public class ListOfCharakters extends ListActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ShowCharacter.deleteMode = false;
                 Character templ = charakterList.get(position);
                 charakterList.remove(templ);
                 int [] idList = createList(templ.getID());
@@ -96,7 +98,6 @@ public class ListOfCharakters extends ListActivity {
         return list;
     }
 
-
     private int[] createList(int id) {
         int [] output = new int[charakterList.size()+1];
         output[0] = id;
@@ -105,8 +106,6 @@ public class ListOfCharakters extends ListActivity {
         }
         return  output;
     }
-
-
 
     private LinkedList<Character> copyList(LinkedList<Character> input) {
         LinkedList<Character> output = new LinkedList<>();

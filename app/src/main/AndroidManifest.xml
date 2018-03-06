@@ -27,10 +27,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".DBActivity"
-            android:label="@string/title_activity_db"
-            android:theme="@style/AppTheme.NoActionBar" android:screenOrientation="portrait"/>
         <activity android:name=".ShowCharacter" android:screenOrientation="portrait" />
         <activity android:name=".DBwithKeyboardActivity" android:screenOrientation="portrait" />
         <activity android:name=".ChooseLectureActivity"  android:screenOrientation="portrait"/>

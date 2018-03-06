@@ -24,6 +24,7 @@ public class ChooseLectureActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_lecture);
+        ShowCharacter.deleteMode = false;
 //        generateCheckBoxes();
 //        lectureArray[0] = cbLecture1;
 //        lectureArray[1] = cbLecture2; lectureArray[2] = cbLecture3; lectureArray[3] = cbLecture4;
@@ -59,7 +60,7 @@ public class ChooseLectureActivity extends AppCompatActivity {
 
     public void btnBeginClick(View view) {
 
-        for(int i=0; i<lectureArray.length-1; i++) {
+        for(int i=0; i<lectureArray.length; i++) {
             if(lectureArray[i].isChecked() == true) {
                 isNeedToShowLecture[i] = true;
             }
@@ -77,23 +78,4 @@ public class ChooseLectureActivity extends AppCompatActivity {
     }
 
 
-    void generateCheckBoxes() {
-        LinearLayout layout = (LinearLayout)findViewById(R.id.checkboxLayout);
-
-        CheckBox templ = new CheckBox(this);
-        templ.setText("Lecture 1");
-        CheckBox templ2 = new CheckBox(this);
-        templ2.setText("Lecture 2");
-
-        CheckBox templ3 = new CheckBox(this);
-        templ2.setText("Lecture 3");
-
-        CheckBox templ4 = new CheckBox(this);
-        templ2.setText("Lecture 4");
-
-        layout.addView(templ);
-        layout.addView(templ2);
-        layout.addView(templ3);
-        layout.addView(templ4);
-    }
 }

@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_main);
         search = findViewById(R.id.etSearch);
         DBCharacters = deserialization();
+        ShowCharacter.deleteMode = false;
     }
 
     public void btnSearchClick(View view) {
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity  {
                                     case 0: {
                                         search.setText("");
                                         search.setHintTextColor(Color.RED);
-                                        search.setHint("Nothing found");
+                                        search.setHint(R.string.nothing_found);
                                         break;
                                     }
                                     case 1: {

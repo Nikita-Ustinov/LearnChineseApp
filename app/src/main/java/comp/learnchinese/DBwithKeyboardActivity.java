@@ -110,7 +110,7 @@ public class DBwithKeyboardActivity extends AppCompatActivity implements View.On
     void saveNewCharacter() {
         String translation = etTranslation.getText().toString();
         if(translation.equals("")|| etCharacter.equals("")) {
-            Toast toast = Toast.makeText(this, "Write something please!", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this, R.string.empty_character_data, Toast.LENGTH_SHORT);
             toast.show();
         }
         else {

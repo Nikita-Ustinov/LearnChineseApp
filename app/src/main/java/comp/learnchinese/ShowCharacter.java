@@ -94,7 +94,7 @@ public class ShowCharacter extends AppCompatActivity implements GestureDetector.
             tvCharacter.setText(DBtoShow.get(0).Character);
             tvCountCharacter.setText(1 + "/" + DBtoShow.size());
         } else if (charactersIdList == null){
-            Toast.makeText(this, "You have no any characters to show", Toast.LENGTH_LONG);
+            Toast.makeText(this, R.string.you_have_no_any_characters_to_show, Toast.LENGTH_LONG);
             try {
                 wait(3000);
             } catch (InterruptedException e) {
@@ -113,7 +113,7 @@ public class ShowCharacter extends AppCompatActivity implements GestureDetector.
     public void nextCharacter() {
         count++;
         if(count > DBtoShow.size()-1) {
-            Toast toast = Toast.makeText(this, "End of data set", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this, R.string.end_of_dataset, Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0 ,0);
             toast.show();
             finish();
@@ -130,7 +130,7 @@ public class ShowCharacter extends AppCompatActivity implements GestureDetector.
         count--;
         if(count < 0) {
             count++;
-            Toast toast = Toast.makeText(this, "Right swipe to show next character", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this, R.string.right_swipe_to_show_next_character, Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.BOTTOM, 0 ,0);
             toast.show();
         }
@@ -171,8 +171,8 @@ public class ShowCharacter extends AppCompatActivity implements GestureDetector.
 
     public void buttonDBClick(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Think one more time");
-        builder.setMessage("You really want to delete character?");
+        builder.setTitle(R.string.delete_title);
+        builder.setMessage(R.string.delete_messege);
         builder.setCancelable(true);
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() { // Кнопка ОК
             @Override
@@ -184,10 +184,9 @@ public class ShowCharacter extends AppCompatActivity implements GestureDetector.
         dialog.show();
     }
 
-
     public void btnDeleteCharacter(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("You really want to delete this character?");
+        builder.setMessage(R.string.delete_messege);
         builder.setCancelable(true);
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() { // Кнопка ОК
             @Override
