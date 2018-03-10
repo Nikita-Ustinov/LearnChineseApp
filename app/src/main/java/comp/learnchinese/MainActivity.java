@@ -41,30 +41,46 @@ public class MainActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_main);
         search = findViewById(R.id.etSearch);
         DBCharacters = deserialization();
+        if(DBCharacters.size() == 0) {
+            try {
+                createDB(this);
+                DBCharacters = deserialization();
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+        }
         ShowCharacter.deleteMode = false;
     }
 
     public void btnSearchClick(View view) {
         Character target = null;
-        String test = search.getText().toString() ;
-        int test2 = test.compareTo("");
-        if(test.compareTo("")== 0) {
-            Toast toast = Toast.makeText(this, "Search field is empty", Toast.LENGTH_SHORT);
+        String text = search.getText().toString();
+        if(text.compareTo("") == 0) {
+            Toast toast = Toast.makeText(this, R.string.write_something, Toast.LENGTH_LONG);
             toast.show();
         }
         else {
-            target = findCaracter(search.getText().toString());
+            text = text.toLowerCase();
+            String space = " ";
+            char lastChar;
+            if(text != "") {
+                lastChar = text.charAt(text.length() - 1);
+                if(space.equals(String.valueOf(lastChar))) {
+                    text = text.substring(0, text.length()-1);
+                }
+            }
+            target = findCaracter(text);
             if(target != null) {
                 showOneCharacter(target);
             }
             else {
-                int [] searchResultId = findSomeCharacters(search.getText().toString());
+                int [] searchResultId = findSomeCharacters(text);
                 switch (searchResultId.length) {
                     case 0: {
-                        searchResultId = findCharactersByPinyinWithoutDiakritics(search.getText().toString());
+                        searchResultId = findCharactersByPinyinWithoutDiakritics(text);
                         switch (searchResultId.length) {
                             case 0: {
-                                searchResultId = findCharactersByTranslate(search.getText().toString());
+                                searchResultId = findCharactersByTranslate(text);
                                 switch (searchResultId.length) {
                                     case 0: {
                                         search.setText("");
@@ -337,8 +353,6 @@ public class MainActivity extends AppCompatActivity  {
             }
         }
         serializace(activity);
-//        Toast toast = Toast.makeText(this, "The DB was successfully actualized.", Toast.LENGTH_SHORT);
-//        toast.show();
     }
 
     String convertStreamToString(BufferedReader inBR) throws IOException {
@@ -368,7 +382,6 @@ public class MainActivity extends AppCompatActivity  {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return output;
     }
 

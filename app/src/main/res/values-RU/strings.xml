@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Учим Китайский</string>
+    <string name="pinyin">Pinyin</string>
+    <string name="lecture">Урок</string>
+    <string name="translation">Перевод:</string>
+    <string name="save_and_snap_again">Сохранить и продолжить</string>
+    <string name="empty_character_data">Напишите что-нибудь о иероглифе</string>
+    <string name="delete_DB">Удалить иероглиф</string>
+    <string name="textview"></string>
+    <string name="Character">Иероглиф</string>
+    <string name="add_character_btn">Добавить иероглиф</string>
+    <string name="study_btn">Учить иероглифы</string>
+    <string name="Seartch_character_hint">Иероглифы, ping ying, перевод</string>
+    <string name="return_menu">Назад</string>
+    <string name="title_choose_lecture">Выберете урок(и) для изучения:</string>
+    <string name="btn_begin">Начать</string>
+    <string name="btn_back">Назад</string>
+    <string name="refresh_characters">Убрать мои иероглифы</string>
+    <string name="ping_ying">Ping ying:</string>
+    <string name="you_have_no_any_characters_to_show">Не выбраны иероглифы для отображения</string>
+    <string name="end_of_dataset">Конец цепочки иероглифов</string>
+    <string name="left_swipe_to_show_next_character">Смахните влево для показа следующего иероглифа</string>
+    <string name="right_swipe_to_show_next_character">Смахните вправо для показа следующего иероглифа</string>
+    <string name="delete_title">Немного раздумий...</string>
+    <string name="delete_messege">Вы действительно хотите удалить?</string>
+    <string name="nothing_found">Ничео не найдено</string>
+    <string name="manual">Навигация</string>
+    <string name="double_tap_to">Двойное касание для отображения перевода и pin yin</string>
+    <string name="choose_at_least_one_lecture">Выберете хотя бы один урок</string>
+    <string name="write_something">Напишите что-нибудь</string>
+</resources>

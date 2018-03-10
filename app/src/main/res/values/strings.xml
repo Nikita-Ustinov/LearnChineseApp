@@ -2,7 +2,7 @@
     <string name="app_name">Studuj Činský</string>
     <string name="pinyin">Pinyin</string>
     <string name="lecture">Lekce</string>
-    <string name="translation">Překlad</string>
+    <string name="translation">Překlad:</string>
     <string name="save_and_snap_again">Uložit a pokračovat</string>
     <string name="empty_character_data">Napiště neco o znaku prosim</string>
     <string name="delete_DB">Smazat znak</string>
@@ -19,8 +19,13 @@
     <string name="ping_ying">Ping ying:</string>
     <string name="you_have_no_any_characters_to_show">Nemate znaky k zobrazení</string>
     <string name="end_of_dataset">Konec řetezce znaků</string>
-    <string name="right_swipe_to_show_next_character">Swipe doprava pro zobrázení následujicího znaku</string>
+    <string name="left_swipe_to_show_next_character">Swipe doleva pro zobrázení následujicího znaku</string>
+    <string name="right_swipe_to_show_next_character">Swipe doprava pro zobrázení předchozího znaku</string>
     <string name="delete_title">Trochu přemyšlení...</string>
     <string name="delete_messege">Opravdu chcete odstranit znak?</string>
     <string name="nothing_found">Nebelo nic nalezeno</string>
+    <string name="manual">Navigace</string>
+    <string name="double_tap_to">Double tap pro zobrázení Pin yin a překladu znaku</string>
+    <string name="choose_at_least_one_lecture">Vyběrte si alespoň jednu lekci</string>
+    <string name="write_something">Nepište něco</string>
 </resources>

@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Learn Chinese</string>
+    <string name="pinyin">Pinyin</string>
+    <string name="lecture">Lessons</string>
+    <string name="translation">Translation:</string>
+    <string name="save_and_snap_again">Save and continue</string>
+    <string name="empty_character_data">Write something please</string>
+    <string name="delete_DB">Delete characters</string>
+    <string name="Character">Character</string>
+    <string name="add_character_btn">Add character</string>
+    <string name="study_btn">Learn characters</string>
+    <string name="Seartch_character_hint">Character, pin yin, translation..</string>
+    <string name="return_menu">Back</string>
+    <string name="textview"></string>
+    <string name="title_choose_lecture">Choose lessons to study:</string>
+    <string name="btn_begin">Begin</string>
+    <string name="btn_back">Back</string>
+    <string name="refresh_characters">Delete your characters</string>
+    <string name="ping_ying">Ping ying:</string>
+    <string name="you_have_no_any_characters_to_show">No hieroglyphs selected for display</string>
+    <string name="end_of_dataset">End of the string of characters</string>
+    <string name="left_swipe_to_show_next_character">Swipe left to display the next character</string>
+    <string name="right_swipe_to_show_next_character">Swipe to the right to display the next character</string>
+    <string name="delete_title">A little reflection...</string>
+    <string name="delete_messege">Do you really want to delete?</string>
+    <string name="nothing_found">Nothing found</string>
+    <string name="manual">Navigation</string>
+    <string name="double_tap_to">Double tap to display the translation and pin yin</string>
+    <string name="choose_at_least_one_lecture">Choose at least one lesson</string>
+    <string name="write_something">Write something</string>
+</resources>

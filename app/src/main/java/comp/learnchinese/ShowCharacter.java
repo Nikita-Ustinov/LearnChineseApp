@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -33,6 +34,7 @@ public class ShowCharacter extends AppCompatActivity implements GestureDetector.
     TextView tvPinyinShow;
     TextView tvCharacter;
     TextView tvCountCharacter;
+    ConstraintLayout fieldManualInfo;
     boolean[] showLecture;
     String characterString = null;
     int [] charactersIdList;
@@ -51,6 +53,7 @@ public class ShowCharacter extends AppCompatActivity implements GestureDetector.
         tvTranslationShow = (TextView) findViewById(R.id.tvTranslationShow);
         tvCharacter = (TextView) findViewById(R.id.tvCharacter);
         tvCountCharacter = (TextView) findViewById(R.id.tvCountCharacter);
+        fieldManualInfo = findViewById(R.id.fieldManualInfo);
 
         Intent intent = getIntent();
         showLecture = intent.getBooleanArrayExtra("lectures to show");
@@ -130,8 +133,7 @@ public class ShowCharacter extends AppCompatActivity implements GestureDetector.
         count--;
         if(count < 0) {
             count++;
-            Toast toast = Toast.makeText(this, R.string.right_swipe_to_show_next_character, Toast.LENGTH_SHORT);
-            toast.setGravity(Gravity.BOTTOM, 0 ,0);
+            Toast toast = Toast.makeText(this, R.string.left_swipe_to_show_next_character, Toast.LENGTH_SHORT);
             toast.show();
         }
         else {
@@ -206,6 +208,23 @@ public class ShowCharacter extends AppCompatActivity implements GestureDetector.
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+
+    public void btnManualClick(View view) {
+        if(fieldManualInfo.getVisibility() == View.VISIBLE) {
+            fieldManualInfo.setVisibility(View.INVISIBLE);
+        }
+        else {
+            fieldManualInfo.setVisibility(View.VISIBLE);
+        }
+    }
+
+    public void btnBackClick(View view) {
+        finish();
+    }
+
+
+
+
     // работа с жестами
     @Override
     public boolean onTouchEvent(MotionEvent motionEvent) {

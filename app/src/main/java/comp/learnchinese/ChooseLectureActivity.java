@@ -3,9 +3,11 @@ package comp.learnchinese;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class ChooseLectureActivity extends AppCompatActivity {
 
@@ -25,20 +27,6 @@ public class ChooseLectureActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_lecture);
         ShowCharacter.deleteMode = false;
-//        generateCheckBoxes();
-//        lectureArray[0] = cbLecture1;
-//        lectureArray[1] = cbLecture2; lectureArray[2] = cbLecture3; lectureArray[3] = cbLecture4;
-//        lectureArray[4] = cbLecture5; lectureArray[5] = cbLecture6; lectureArray[6] = cbLecture7;
-//        lectureArray[7] = cbLecture8; lectureArray[8] = cbLecture9; lectureArray[9] = cbLecture10;
-//        lectureArray[10] = cbLecture11; lectureArray[11] = cbLecture12; lectureArray[12] = cbLecture13;
-//        lectureArray[13] = cbLecture14; lectureArray[14] = cbLecture15; lectureArray[15] = cbLecture16;
-//
-//        lectureArray[16] = cbLecture17;
-//        lectureArray[17] = cbLecture18; lectureArray[18] = cbLecture19; lectureArray[19] = cbLecture20;
-//        lectureArray[20] = cbLecture21; lectureArray[21] = cbLecture22; lectureArray[22] = cbLecture23;
-//        lectureArray[23] = cbLecture24; lectureArray[24] = cbLecture25; lectureArray[25] = cbLecture26;
-//        lectureArray[26] = cbLecture27; lectureArray[27] = cbLecture28; lectureArray[28] = cbLecture29;
-//        lectureArray[29] = cbLecture30;
 
         lectureArray[0] = (CheckBox)findViewById(R.id.checkBox1); lectureArray[1] = (CheckBox)findViewById(R.id.checkBox2);
         lectureArray[2] = (CheckBox)findViewById(R.id.checkBox3); lectureArray[3] = (CheckBox)findViewById(R.id.checkBox4);
@@ -60,21 +48,29 @@ public class ChooseLectureActivity extends AppCompatActivity {
 
     public void btnBeginClick(View view) {
 
-        for(int i=0; i<lectureArray.length; i++) {
-            if(lectureArray[i].isChecked() == true) {
+        boolean choosedFlag = false;
+        for (int i = 0; i < lectureArray.length; i++) {
+            if (lectureArray[i].isChecked() == true) {
                 isNeedToShowLecture[i] = true;
-            }
-            else
+                choosedFlag = true;
+            } else
                 isNeedToShowLecture[i] = false;
         }
-        Intent intent = new Intent(this, ShowCharacter.class);
-        intent.putExtra("lectures to show", isNeedToShowLecture);
-        startActivity(intent);
+        if(!choosedFlag){
+            Toast toast = Toast.makeText(this, R.string.choose_at_least_one_lecture, Toast.LENGTH_LONG);
+            toast.show();
+        }
+        else {
+            Intent intent = new Intent(this, ShowCharacter.class);
+            intent.putExtra("lectures to show", isNeedToShowLecture);
+            startActivity(intent);
+        }
+
+
     }
 
     public void btnBackClick(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        finish();
     }
 
 
